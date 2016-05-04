@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
+# bin/release <build-dir>
 
-echo ---
+cat <<EOF
+---
+addons: []
+default_process_types:
+  web: ./bin/rewrite-index-meta && ./bin/set-cdn-prefix && bin/boot
+EOF
